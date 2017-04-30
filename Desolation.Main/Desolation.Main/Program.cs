@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Desolation.General.ArgumentsParser;
 
 namespace Desolation.Main
 {
@@ -10,6 +6,10 @@ namespace Desolation.Main
     {
         static void Main(string[] args)
         {
-        }
+            Parameters parameters = ArgumentsParser.Parse(args);
+            
+            Game game = new Game(parameters);
+            game.Run();
+        } 
     }
 }

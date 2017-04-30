@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desolation.Common
+namespace Desolation.Graphics.Graphics
 {
-    public class Class1
+    class Camera
     {
     }
 }

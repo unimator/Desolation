@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{583B206C-2789-4D09-87B1-9D092C11F5A2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{2842BC63-CE5B-4AA9-AF14-9ACF42E33CAD}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Desolation.Main</RootNamespace>
-    <AssemblyName>Desolation.Main</AssemblyName>
+    <RootNamespace>Desolation.Graphics</RootNamespace>
+    <AssemblyName>Desolation.Graphics</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,12 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="OpenTK">
       <HintPath>..\packages\OpenTK\OpenTK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,26 +45,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Graphics\Drawables\Point.cs" />
+    <Compile Include="Graphics\Drawables\Polygon.cs" />
+    <Compile Include="Graphics\Drawables\Rectangle.cs" />
+    <Compile Include="Graphics\Drawables\SquarePrism.cs" />
+    <Compile Include="Graphics\Drawables\Tile.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext2D\ClippingArea.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext2D\DrawingContext2D.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext3D\DrawingContext3D.cs" />
+    <Compile Include="Graphics\Drawables\Drawable.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext3D\Perspective.cs" />
+    <Compile Include="Graphics\Texture\Face.cs" />
+    <Compile Include="Graphics\Texture\Texture.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\FacesChangedEventArgs.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\Texture2DManager.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\TextureManager.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\PolygonTextureManager.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\RectangleTextureManager.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\SquarePrismTextureManager.cs" />
+    <Compile Include="Window\WindowFeatures.cs" />
+    <Compile Include="Window\MainWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="Graphics\Texture\Texture2D.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Desolation.General\Desolation.General.csproj">
       <Project>{9203276b-d1e2-4791-b0e8-c1ec496741ce}</Project>
       <Name>Desolation.General</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Desolation.Graphics\Desolation.Graphics.csproj">
-      <Project>{2842bc63-ce5b-4aa9-af14-9acf42e33cad}</Project>
-      <Name>Desolation.Graphics</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Menu\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
