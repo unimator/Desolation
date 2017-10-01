@@ -55,9 +55,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Desolation.General\Desolation.General.csproj">
+    <ProjectReference Include="..\Desolation.Basic\Desolation.Basic.csproj">
       <Project>{9203276b-d1e2-4791-b0e8-c1ec496741ce}</Project>
-      <Name>Desolation.General</Name>
+      <Name>Desolation.Basic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Desolation.Graphics\Desolation.Graphics.csproj">
       <Project>{2842bc63-ce5b-4aa9-af14-9acf42e33cad}</Project>

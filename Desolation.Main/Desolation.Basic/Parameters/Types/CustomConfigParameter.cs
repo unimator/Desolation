@@ -1,4 +1,4 @@
-﻿namespace Desolation.General.ArgumentsParser.Arguments
+namespace Desolation.Basic.Parameters.Types
 {
     public sealed class CustomConfigParameter : ParameterBase
     {
@@ -7,9 +7,10 @@
 
         public string ConfigFileName { get; set; }
 
-        internal override void Parse(Parameters parameters, string[] arguments)
+        internal override ParameterBase Parse(string[] arguments)
         {
-            parameters.CustomConfig = new CustomConfigParameter() {ConfigFileName = arguments[0]};
+            var customConfig = new CustomConfigParameter {ConfigFileName = arguments[0]};
+            return customConfig;
         }
 
         public override bool Compare(ParameterBase other)

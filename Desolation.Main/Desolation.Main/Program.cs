@@ -1,4 +1,5 @@
-﻿using Desolation.General.ArgumentsParser;
+﻿using Desolation.Basic.Parameters;
+using Desolation.Basic.Parameters.Factories;
 
 namespace Desolation.Main
 {
@@ -6,7 +7,9 @@ namespace Desolation.Main
     {
         static void Main(string[] args)
         {
-            Parameters parameters = ArgumentsParser.Parse(args);
+            var argumentsFactory = new DefaultArgumentsFactory();
+            var argumentsParser = new ArgumentsParser(argumentsFactory);
+            Parameters parameters = argumentsParser.Parse(args);
             
             Game game = new Game(parameters);
             game.Run();

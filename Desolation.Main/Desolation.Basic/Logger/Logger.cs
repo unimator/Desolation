@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Desolation.General.Logger
+namespace Desolation.Basic.Logger
 {
     public static class Logger
     {

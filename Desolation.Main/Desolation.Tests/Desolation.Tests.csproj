@@ -56,6 +56,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Basic\Collections\TypedSetTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ArgumentsParserTest.cs" />
   </ItemGroup>
@@ -63,11 +64,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Desolation.General\Desolation.General.csproj">
+    <ProjectReference Include="..\Desolation.Basic\Desolation.Basic.csproj">
       <Project>{9203276b-d1e2-4791-b0e8-c1ec496741ce}</Project>
-      <Name>Desolation.General</Name>
+      <Name>Desolation.Basic</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

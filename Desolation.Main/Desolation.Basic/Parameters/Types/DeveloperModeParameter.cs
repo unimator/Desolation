@@ -1,4 +1,4 @@
-﻿namespace Desolation.General.ArgumentsParser.Arguments
+namespace Desolation.Basic.Parameters.Types
 {
     public sealed class DeveloperModeParameter : ParameterBase
     {
@@ -7,9 +7,10 @@
 
         public bool DeveloperModeOn { get; set; }
 
-        internal override void Parse(Parameters parameters, string[] arguments)
+        internal override ParameterBase Parse(string[] arguments)
         {
-            parameters.DeveloperMode = new DeveloperModeParameter {DeveloperModeOn = true};
+            var develeopeMode = new DeveloperModeParameter {DeveloperModeOn = true};
+            return develeopeMode;
         }
         
         public override bool Compare(ParameterBase other)

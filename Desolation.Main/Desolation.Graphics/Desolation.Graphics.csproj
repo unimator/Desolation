@@ -48,7 +48,6 @@
     <Compile Include="Graphics\Drawables\Point.cs" />
     <Compile Include="Graphics\Drawables\Polygon.cs" />
     <Compile Include="Graphics\Drawables\Rectangle.cs" />
-    <Compile Include="Graphics\Drawables\SquarePrism.cs" />
     <Compile Include="Graphics\Drawables\Tile.cs" />
     <Compile Include="Graphics\DrawingContext\DrawingContext2D\ClippingArea.cs" />
     <Compile Include="Graphics\DrawingContext\DrawingContext.cs" />
@@ -58,21 +57,19 @@
     <Compile Include="Graphics\DrawingContext\DrawingContext3D\Perspective.cs" />
     <Compile Include="Graphics\Texture\Face.cs" />
     <Compile Include="Graphics\Texture\Texture.cs" />
-    <Compile Include="Graphics\Texture\TextureManagers\FacesChangedEventArgs.cs" />
     <Compile Include="Graphics\Texture\TextureManagers\Texture2DManager.cs" />
     <Compile Include="Graphics\Texture\TextureManagers\TextureManager.cs" />
     <Compile Include="Graphics\Texture\TextureManagers\PolygonTextureManager.cs" />
     <Compile Include="Graphics\Texture\TextureManagers\RectangleTextureManager.cs" />
-    <Compile Include="Graphics\Texture\TextureManagers\SquarePrismTextureManager.cs" />
     <Compile Include="Window\WindowFeatures.cs" />
     <Compile Include="Window\MainWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Graphics\Texture\Texture2D.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Desolation.General\Desolation.General.csproj">
+    <ProjectReference Include="..\Desolation.Basic\Desolation.Basic.csproj">
       <Project>{9203276b-d1e2-4791-b0e8-c1ec496741ce}</Project>
-      <Name>Desolation.General</Name>
+      <Name>Desolation.Basic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

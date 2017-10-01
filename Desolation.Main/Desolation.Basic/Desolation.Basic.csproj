@@ -7,8 +7,8 @@
     <ProjectGuid>{9203276B-D1E2-4791-B0E8-C1EC496741CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Desolation.General</RootNamespace>
-    <AssemblyName>Desolation.General</AssemblyName>
+    <RootNamespace>Desolation.Basic</RootNamespace>
+    <AssemblyName>Desolation.Basic</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,35 +40,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArgumentsParser\Arguments\CustomConfigParameter.cs" />
-    <Compile Include="ArgumentsParser\Arguments\ParameterBase.cs" />
-    <Compile Include="ArgumentsParser\ArgumentsParser.cs" />
-    <Compile Include="ArgumentsParser\Parameters.cs" />
-    <Compile Include="ArgumentsParser\Arguments\DeveloperModeParameter.cs" />
-    <Compile Include="ArgumentsParser\Arguments\ResolutionParameter.cs" />
+    <Compile Include="Config\ConfigPersistenceManager.cs" />
+    <Compile Include="Parameters\Factories\ArgumentsFactoryBase.cs" />
+    <Compile Include="Parameters\Factories\DefaultArgumentsFactory.cs" />
+    <Compile Include="Parameters\Types\CustomConfigParameter.cs" />
+    <Compile Include="Parameters\Types\ParameterBase.cs" />
+    <Compile Include="Parameters\ParametersParser.cs" />
+    <Compile Include="Parameters\Parameters.cs" />
+    <Compile Include="Parameters\Types\DeveloperModeParameter.cs" />
+    <Compile Include="Parameters\Types\ResolutionParameter.cs" />
     <Compile Include="Config\Config.cs" />
-    <Compile Include="Config\WindowSettings.cs" />
+    <Compile Include="Config\ConfigInitializer.cs" />
+    <Compile Include="Config\Options\WindowSettingsOption.cs" />
     <Compile Include="Logger\Logger.cs" />
     <Compile Include="Logger\LogMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LogMessages.resx</DependentUpon>
     </Compile>
+    <Compile Include="Collections\TypedSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resource.Designer.cs">
-      <DependentUpon>Resource.resx</DependentUpon>
+    <Compile Include="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Helpers\XmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Logger\LogMessages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LogMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resource.resx">
+    <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

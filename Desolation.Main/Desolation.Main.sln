@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desolation.Main", "Desolation.Main\Desolation.Main.csproj", "{583B206C-2789-4D09-87B1-9D092C11F5A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desolation.Tests", "Desolation.Tests\Desolation.Tests.csproj", "{828FD5D4-8A7C-4445-B9A2-87EBC4AA78F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desolation.General", "Desolation.General\Desolation.General.csproj", "{9203276B-D1E2-4791-B0E8-C1EC496741CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desolation.Basic", "Desolation.Basic\Desolation.Basic.csproj", "{9203276B-D1E2-4791-B0E8-C1EC496741CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desolation.Graphics", "Desolation.Graphics\Desolation.Graphics.csproj", "{2842BC63-CE5B-4AA9-AF14-9ACF42E33CAD}"
 EndProject

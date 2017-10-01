@@ -1,4 +1,4 @@
-﻿namespace Desolation.General.ArgumentsParser.Arguments
+﻿namespace Desolation.Basic.Parameters.Types
 {
     public sealed class ResolutionParamter : ParameterBase
     {
@@ -8,13 +8,14 @@
         public int Width { get; set; }
         public int Height { get; set; }
         
-        internal override void Parse(Parameters parameters, string[] arguments)
+        internal override ParameterBase Parse(string[] arguments)
         {
-            parameters.Resolution = new ResolutionParamter
+            var resolution = new ResolutionParamter
             {
                 Width = int.Parse(arguments[0]),
                 Height = int.Parse(arguments[1])
             };
+            return resolution;
         }
 
         public override bool Compare(ParameterBase other)
@@ -26,6 +27,12 @@
             if (this.Height != resolutionParamter.Height) return false;
             else if (this.Width != resolutionParamter.Width) return false;
             return true;
+        }
+
+        public override void TryApplyOnConfig(Config.Config config)
+        {
+            config.WindowSettings.Width = Width;
+            config.WindowSettings.Height = Height;
         }
     }
 }

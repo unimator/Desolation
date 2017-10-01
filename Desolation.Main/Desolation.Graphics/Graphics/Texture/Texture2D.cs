@@ -113,22 +113,5 @@ namespace Desolation.Graphics.Graphics.Texture
                 GL.DeleteTexture(Id.Value);
             }
         }
-
-        private Bitmap SetOpacity(Bitmap bitmap, float opacity)
-        {
-            Bitmap canvas = new Bitmap(bitmap.Width, bitmap.Height);
-            using (System.Drawing.Graphics gfx = System.Drawing.Graphics.FromImage(canvas))
-            {
-                gfx.DrawImage(bitmap, 0, 0);
-                ColorMatrix matrix = new ColorMatrix();
-                matrix.Matrix33 = opacity;
-
-                ImageAttributes attributes = new ImageAttributes();
-                attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-                
-                gfx.DrawImage(bitmap, new Rectangle(0, 0, canvas.Width, canvas.Height), 0, 0, bitmap.Width, bitmap.Height, GraphicsUnit.Pixel, attributes);
-            }
-            return bitmap;
-        }
     }
 }
