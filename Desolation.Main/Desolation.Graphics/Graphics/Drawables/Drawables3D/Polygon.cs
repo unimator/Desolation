@@ -1,7 +1,7 @@
 ﻿using System;
 using OpenTK;
 
-namespace Desolation.Graphics.Graphics.Drawables
+namespace Desolation.Graphics.Graphics.Drawables.Drawables3D
 {
     public abstract class Polygon : Drawable
     {

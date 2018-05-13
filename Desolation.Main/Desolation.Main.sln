@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desolation.Tests", "Desolat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desolation.Basic", "Desolation.Basic\Desolation.Basic.csproj", "{9203276B-D1E2-4791-B0E8-C1EC496741CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desolation.Graphics", "Desolation.Graphics\Desolation.Graphics.csproj", "{2842BC63-CE5B-4AA9-AF14-9ACF42E33CAD}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Desolation.Installer", "Desolation.Installer\Desolation.Installer.vdproj", "{DA7F1AD3-9254-4464-AA55-1DF48DB437E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +29,13 @@ Global
 		{9203276B-D1E2-4791-B0E8-C1EC496741CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9203276B-D1E2-4791-B0E8-C1EC496741CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9203276B-D1E2-4791-B0E8-C1EC496741CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2842BC63-CE5B-4AA9-AF14-9ACF42E33CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2842BC63-CE5B-4AA9-AF14-9ACF42E33CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2842BC63-CE5B-4AA9-AF14-9ACF42E33CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2842BC63-CE5B-4AA9-AF14-9ACF42E33CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7F1AD3-9254-4464-AA55-1DF48DB437E5}.Debug|Any CPU.ActiveCfg = Debug
+		{DA7F1AD3-9254-4464-AA55-1DF48DB437E5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF12B611-35CF-4D23-BB4E-275B5218E329}
 	EndGlobalSection
 EndGlobal

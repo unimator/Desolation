@@ -7,10 +7,9 @@ namespace Desolation.Basic.Parameters.Types
 
         public string ConfigFileName { get; set; }
 
-        internal override ParameterBase Parse(string[] arguments)
+        internal override void Parse(string[] arguments)
         {
-            var customConfig = new CustomConfigParameter {ConfigFileName = arguments[0]};
-            return customConfig;
+            ConfigFileName = arguments[0];
         }
 
         public override bool Compare(ParameterBase other)

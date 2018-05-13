@@ -20,7 +20,7 @@ namespace Desolation.Basic.Parameters.Types
         /// </summary>
         internal abstract string Name { get; }
 
-        internal abstract ParameterBase Parse(string [] arguments);
+        internal abstract void Parse(string [] arguments);
 
         /// <summary>
         /// Compares two parameters.

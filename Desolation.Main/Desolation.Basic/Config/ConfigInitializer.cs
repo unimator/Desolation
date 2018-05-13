@@ -7,11 +7,18 @@ namespace Desolation.Basic.Config
 {
     public static class ConfigInitializer
     {
-        public static readonly string ConfigFileName = Resources.ConfigFileName;
+        public static string DefaultConfigPath
+        {
+            get
+            {
+                var appData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                return Path.Combine(appData, Resources.AppName, Resources.ConfigFileName);
+            }
+        }
 
         public static Config LoadDefaultConfig()
         {
-            return LoadConfig(ConfigFileName);
+            return LoadConfig(DefaultConfigPath);
         }
 
         public static Config LoadConfig(string configFileName)
@@ -19,7 +26,7 @@ namespace Desolation.Basic.Config
             Config config;
             try
             {
-                string configXml = File.ReadAllText(configFileName);
+                var configXml = File.ReadAllText(configFileName);
                 config = XmlHelper.FromXml<Config>(configXml);
             }
             catch (Exception)

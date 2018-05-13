@@ -7,15 +7,14 @@ namespace Desolation.Basic.Parameters.Types
 
         public bool DeveloperModeOn { get; set; }
 
-        internal override ParameterBase Parse(string[] arguments)
+        internal override void Parse(string[] arguments)
         {
-            var develeopeMode = new DeveloperModeParameter {DeveloperModeOn = true};
-            return develeopeMode;
+            DeveloperModeOn = true;
         }
         
         public override bool Compare(ParameterBase other)
         {
-            DeveloperModeParameter developerModeParameter = other as DeveloperModeParameter;
+            var developerModeParameter = other as DeveloperModeParameter;
 
             if (DeveloperModeOn != developerModeParameter?.DeveloperModeOn) return false;
 

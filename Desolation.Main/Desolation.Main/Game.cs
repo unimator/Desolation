@@ -1,10 +1,10 @@
 ﻿using System;
-using Desolation.Graphics.Window;
 using Desolation.Basic.Config;
-using Desolation.Basic.Config.Options;
 using Desolation.Basic.Logger;
 using Desolation.Basic.Parameters;
 using Desolation.Basic.Parameters.Types;
+using Desolation.Main.Window;
+using OpenTK;
 
 namespace Desolation.Main
 {
@@ -27,7 +27,7 @@ namespace Desolation.Main
 
             var configFileName = !string.IsNullOrEmpty(customConfig?.ConfigFileName) 
                 ? customConfig.ConfigFileName 
-                : ConfigInitializer.ConfigFileName;
+                : ConfigInitializer.DefaultConfigPath;
 
             try
             {
@@ -46,7 +46,7 @@ namespace Desolation.Main
                 parameter.TryApplyOnConfig(_config);
             }
 
-            OnExit += (sender, args) => { ConfigPersistenceManager.SaveToFile(_config, configFileName); };
+            //OnExit += (sender, args) => { ConfigPersistenceManager.SaveToFile(_config, configFileName); };
         }
 
         public void Run()
@@ -57,8 +57,9 @@ namespace Desolation.Main
             if(windowSettings == null)
                 throw new Exception("Window settings option is null");
 
-            _window = new MainWindow(windowSettings.Width, windowSettings.Height);
-            _window.Closed += (sender, args) => { ShouldExit = true; }; 
+            _window = new MainWindow(windowSettings);
+            MainWindowUtils.Initialize(_window);
+            _window.Closed += (sender, args) => { ShouldExit = true; };
             _window.Run();
 
             var eventArgs = new EventArgs();

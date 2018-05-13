@@ -10,7 +10,7 @@ namespace Desolation.Basic.Parameters
     {
         private readonly Dictionary<string, Type> _parametersTypes;
 
-        public ArgumentsParser(ArgumentsFactoryBase argumentsFactory)
+        public ArgumentsParser(IArgumentsFactory argumentsFactory)
         {
             _parametersTypes = argumentsFactory.CreateParameters();
         }
@@ -28,7 +28,7 @@ namespace Desolation.Basic.Parameters
             
                 if (_parametersTypes.ContainsKey(parameter))
                 {
-                    ParameterBase argument = (ParameterBase) Activator.CreateInstance(_parametersTypes[parameter]);
+                    var argument = (ParameterBase) Activator.CreateInstance(_parametersTypes[parameter]);
                     
                     int argumentsNumber = argument.ArgumentsNumber;
 
@@ -43,7 +43,8 @@ namespace Desolation.Basic.Parameters
                     }
 
                     string[] argumentParameters = argumentsLine.Skip(i + 1).Take(argumentsNumber).ToArray();
-                    parameters.ParametersSet.Insert(argument.Parse(argumentParameters));
+                    argument.Parse(argumentParameters);
+                    parameters.ParametersSet.Insert(argument);
 
                     i += argumentsNumber;
                 } else 

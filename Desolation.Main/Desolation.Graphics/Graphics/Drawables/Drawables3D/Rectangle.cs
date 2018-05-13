@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using Desolation.Graphics.Graphics.Texture;
 using Desolation.Graphics.Graphics.Texture.TextureManagers;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 
-namespace Desolation.Graphics.Graphics.Drawables
+namespace Desolation.Graphics.Graphics.Drawables.Drawables3D
 {
     public class Rectangle : Polygon
     {
@@ -21,21 +20,6 @@ namespace Desolation.Graphics.Graphics.Drawables
         public Rectangle(Vector3 center, Vector3 normal, Vector3 up, float sizeW, float sizeH)
             :
             this(center, normal, up, sizeW, sizeH, RectangleTextureManager.Default)
-        { }
-
-        public Rectangle(Vector3 center, Vector3 normal, Vector3 up, float sizeW, float sizeH, Color color)
-            :
-            this(center, normal, up, sizeW, sizeH, new RectangleTextureManager(Texture2D.None, color))
-        { }
-
-        public Rectangle(Vector3 center, Vector3 normal, Vector3 up, float sizeW, float sizeH, Texture2D texture)
-        :
-            this(center, normal, up, sizeW, sizeH, new RectangleTextureManager(texture, Color.White))
-        { }
-        
-        public Rectangle(Vector3 center, Vector3 normal, Vector3 up, float sizeW, float sizeH, Texture2D texture, Color color)
-            :
-            this(center, normal, up, sizeW, sizeH, new RectangleTextureManager(texture, color))
         { }
         
         public Rectangle(Vector3 center, Vector3 normal, Vector3 up, float sizeW, float sizeH, RectangleTextureManager textureManager)

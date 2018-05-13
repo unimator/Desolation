@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppName" xml:space="preserve">
+    <value>Desolation</value>
+  </data>
   <data name="ConfigFileName" xml:space="preserve">
     <value>config.xml</value>
+  </data>
+  <data name="FullscreenBorder" xml:space="preserve">
+    <value>fullscreen</value>
+  </data>
+  <data name="NoBorder" xml:space="preserve">
+    <value>borderless</value>
+  </data>
+  <data name="NormalBorder" xml:space="preserve">
+    <value>normal</value>
   </data>
 </root>

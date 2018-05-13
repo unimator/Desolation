@@ -4,15 +4,16 @@ using Desolation.Basic.Parameters.Types;
 
 namespace Desolation.Basic.Parameters.Factories
 {
-    public class DefaultArgumentsFactory : ArgumentsFactoryBase
+    public class DefaultArgumentsFactory : IArgumentsFactory
     {
-        public override Dictionary<string, Type> CreateParameters()
+        public Dictionary<string, Type> CreateParameters()
         {
             var parameters = new Dictionary<string, Type>
             {
                 { "developer", typeof(DeveloperModeParameter) },
                 { "resolution", typeof(ResolutionParamter) },
-                { "config", typeof(CustomConfigParameter) }
+                { "config", typeof(CustomConfigParameter) },
+                { "border", typeof(BorderTypeParameter) }
             };
 
             return parameters;

@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\ConfigPersistenceManager.cs" />
-    <Compile Include="Parameters\Factories\ArgumentsFactoryBase.cs" />
+    <Compile Include="Config\Options\WindowFeatures.cs" />
+    <Compile Include="Parameters\Factories\IArgumentsFactory.cs" />
     <Compile Include="Parameters\Factories\DefaultArgumentsFactory.cs" />
+    <Compile Include="Parameters\Types\BorderTypeParameter.cs" />
     <Compile Include="Parameters\Types\CustomConfigParameter.cs" />
     <Compile Include="Parameters\Types\ParameterBase.cs" />
     <Compile Include="Parameters\ParametersParser.cs" />
@@ -51,7 +53,7 @@
     <Compile Include="Parameters\Types\ResolutionParameter.cs" />
     <Compile Include="Config\Config.cs" />
     <Compile Include="Config\ConfigInitializer.cs" />
-    <Compile Include="Config\Options\WindowSettingsOption.cs" />
+    <Compile Include="Config\Options\Entities\WindowSettingsOption.cs" />
     <Compile Include="Logger\Logger.cs" />
     <Compile Include="Logger\LogMessages.Designer.cs">
       <AutoGen>True</AutoGen>

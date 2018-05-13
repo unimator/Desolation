@@ -1,17 +1,20 @@
-﻿using Desolation.Basic.Parameters;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Desolation.Basic.Parameters;
 using Desolation.Basic.Parameters.Factories;
 
 namespace Desolation.Main
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
             var argumentsFactory = new DefaultArgumentsFactory();
             var argumentsParser = new ArgumentsParser(argumentsFactory);
-            Parameters parameters = argumentsParser.Parse(args);
+            var parameters = argumentsParser.Parse(args);
             
-            Game game = new Game(parameters);
+            var game = new Game(parameters);
             game.Run();
         } 
     }

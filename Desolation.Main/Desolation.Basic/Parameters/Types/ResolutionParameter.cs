@@ -8,24 +8,20 @@
         public int Width { get; set; }
         public int Height { get; set; }
         
-        internal override ParameterBase Parse(string[] arguments)
+        internal override void Parse(string[] arguments)
         {
-            var resolution = new ResolutionParamter
-            {
-                Width = int.Parse(arguments[0]),
-                Height = int.Parse(arguments[1])
-            };
-            return resolution;
+            Width = int.Parse(arguments[0]);
+            Height = int.Parse(arguments[1]);
         }
 
         public override bool Compare(ParameterBase other)
         {
             if (!(other is ResolutionParamter)) return false;
 
-            ResolutionParamter resolutionParamter = (ResolutionParamter) other;
+            var resolutionParamter = (ResolutionParamter) other;
 
-            if (this.Height != resolutionParamter.Height) return false;
-            else if (this.Width != resolutionParamter.Width) return false;
+            if (Height != resolutionParamter.Height) return false;
+            if (Width != resolutionParamter.Width) return false;
             return true;
         }
 

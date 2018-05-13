@@ -1,5 +1,5 @@
 ﻿using System.Xml.Serialization;
-using Desolation.Basic.Config.Options;
+using Desolation.Basic.Config.Options.Entities;
 
 namespace Desolation.Basic.Config
 {

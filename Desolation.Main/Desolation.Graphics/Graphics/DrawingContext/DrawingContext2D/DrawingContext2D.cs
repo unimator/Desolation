@@ -11,29 +11,6 @@ namespace Desolation.Graphics.Graphics.DrawingContext.DrawingContext2D
             ClippingArea = clippingArea;
         }
 
-        public DrawingContext2D(
-            float left, float rigth,
-            float bottom, float top)
-            :
-            this(left, rigth, bottom, top, -1, 1)
-        { }
-
-        public DrawingContext2D(
-            float left, float rigth,
-            float bottom, float top,
-            float near, float far)
-            :
-            this(new ClippingArea()
-            {
-                Left = left,
-                Right = rigth,
-                Bottom =  bottom,
-                Top = top,
-                Near = near,
-                Far = far
-            })
-        { }
-        
         public override void Render()
         {
             GL.PushMatrix();

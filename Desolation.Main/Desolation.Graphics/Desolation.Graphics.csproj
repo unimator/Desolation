@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graphics\Drawables\Point.cs" />
-    <Compile Include="Graphics\Drawables\Polygon.cs" />
-    <Compile Include="Graphics\Drawables\Rectangle.cs" />
-    <Compile Include="Graphics\Drawables\Tile.cs" />
+    <Compile Include="Graphics\Drawables\Drawables2D\Point.cs" />
+    <Compile Include="Graphics\Drawables\Drawables2D\Polygon.cs" />
+    <Compile Include="Graphics\Drawables\Drawables3D\Point.cs" />
+    <Compile Include="Graphics\Drawables\Drawables3D\Polygon.cs" />
+    <Compile Include="Graphics\Drawables\Drawables3D\Rectangle.cs" />
+    <Compile Include="Graphics\Drawables\Drawables3D\Tile.cs" />
     <Compile Include="Graphics\DrawingContext\DrawingContext2D\ClippingArea.cs" />
     <Compile Include="Graphics\DrawingContext\DrawingContext.cs" />
     <Compile Include="Graphics\DrawingContext\DrawingContext2D\DrawingContext2D.cs" />
@@ -61,6 +63,11 @@
     <Compile Include="Graphics\Texture\TextureManagers\TextureManager.cs" />
     <Compile Include="Graphics\Texture\TextureManagers\PolygonTextureManager.cs" />
     <Compile Include="Graphics\Texture\TextureManagers\RectangleTextureManager.cs" />
+    <Compile Include="Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
     <Compile Include="Window\WindowFeatures.cs" />
     <Compile Include="Window\MainWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,7 +79,15 @@
       <Name>Desolation.Basic</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholder_100x40.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -2,24 +2,24 @@
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 
-namespace Desolation.Graphics.Graphics.Drawables
+namespace Desolation.Main.Graphics.Drawing.Drawing2D
 {
-    public class Point : Drawable
+    public class Point2D : DrawingModel
     {
-        public Vector3 Coordinates { get; set; }
+        public Vector2 Coordinates { get; set; }
         public float Size { get; set; }
-        
-        public Point(Vector3 coordinates)
+       
+        public Point2D(Vector2 coordinates)
             :
             this(coordinates, 1.0f)
         { }
 
-        public Point(Vector3 coordinates, float size)
+        public Point2D(Vector2 coordinates, float size)
             :
             this(coordinates, size, Color.White)
         { }
 
-        public Point(Vector3 coordinates, float size, Color color)
+        public Point2D(Vector2 coordinates, float size, Color color)
         {
             Coordinates = coordinates;
             Size = size;
@@ -31,7 +31,7 @@ namespace Desolation.Graphics.Graphics.Drawables
             GL.PointSize(Size);
             GL.Color3(Color);
             GL.Begin(PrimitiveType.Points);
-            GL.Vertex3(Coordinates.X, Coordinates.Y, Coordinates.Z);
+            GL.Vertex2(Coordinates.X, Coordinates.Y);
             GL.End();
             GL.Color3(Color.Transparent);
         }

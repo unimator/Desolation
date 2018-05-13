@@ -10,7 +10,6 @@ namespace Desolation.Graphics.Graphics.Texture
     public class Texture2D : Texture, IDisposable
     {
         private static Texture2D _noneInstance;
-
         public static Texture2D None
         {
             get
@@ -20,7 +19,7 @@ namespace Desolation.Graphics.Graphics.Texture
 
                 _noneInstance = new Texture2D();
                 _noneInstance.Id = GL.GenTexture();
-                GL.BindTexture(TextureTarget.Texture2D, _noneInstance.Id.Value);
+                //GL.BindTexture(TextureTarget.Texture2D, _noneInstance.Id.Value);
                 return _noneInstance;
             }
         }
@@ -41,33 +40,32 @@ namespace Desolation.Graphics.Graphics.Texture
         public int Width { get; private set; }
         public int Heigth { get; private set; }
         
-        private Bitmap _bitmap;
+        private readonly Bitmap _bitmap;
 
-        public void LoadBitmap(string path)
+        private Texture2D() { }
+
+        public Texture2D(Bitmap bitmap)
         {
-            if (!File.Exists(path))
-                throw new FileNotFoundException($"{path} not found.");
+            if(bitmap == null)
+                throw new ArgumentNullException(nameof(bitmap));
 
-            _bitmap = new Bitmap(path);
+            _bitmap = (Bitmap)bitmap.Clone();
         }
-
-        public void UnloadBitmap()
-        {
-            _bitmap.Dispose();
-        }
-
-        public void MakeBitmapTransparent(Color color)
+        
+        public void SetTransparentColor(Color color)
         {
             if(_bitmap == null)
-                throw new ArgumentNullException("Bitmap has not been loaded.");
+                throw new ArgumentNullException(nameof(color));
 
             _bitmap.MakeTransparent(color);
         }
 
         public void Dispose()
         {
-            UnloadTexture();
-            Width = Heigth = 0;
+            if (Id.HasValue && GL.IsTexture(Id.Value))
+            {
+                GL.DeleteTexture(Id.Value);
+            }
         }
 
         public override void BindTexture()
@@ -77,13 +75,10 @@ namespace Desolation.Graphics.Graphics.Texture
             GL.BindTexture(TextureTarget.Texture2D, Id.Value);
         }
 
-        public void LoadTexture()
+        public void InitTexture()
         {
             if (_bitmap == null)
                 throw new ArgumentNullException("Bitmap has not been loaded.");
-
-            if (Id.HasValue)
-                UnloadTexture();
 
             Id = GL.GenTexture();
             GL.BindTexture(TextureTarget.Texture2D, Id.Value);
@@ -104,14 +99,6 @@ namespace Desolation.Graphics.Graphics.Texture
             Heigth = _bitmap.Height;
 
             _bitmap.UnlockBits(bitmapData);
-        }
-
-        public void UnloadTexture()
-        {
-            if (Id.HasValue && GL.IsTexture(Id.Value))
-            {
-                GL.DeleteTexture(Id.Value);
-            }
         }
     }
 }

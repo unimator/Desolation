@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
@@ -38,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,8 +51,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
+    <Compile Include="Graphics\Drawing\Drawing2D\Text2D.cs" />
+    <Compile Include="Graphics\Drawing\DrawingModel.cs" />
+    <Compile Include="Graphics\Drawing\Drawing2D\Point2D.cs" />
+    <Compile Include="Graphics\Drawing\Drawing2D\Polygon2D.cs" />
+    <Compile Include="Graphics\Drawing\Drawing2D\Rectangle2D.cs" />
+    <Compile Include="Graphics\Drawing\Drawing3D\Point3D.cs" />
+    <Compile Include="Graphics\Drawing\Drawing3D\Polygon3D.cs" />
+    <Compile Include="Graphics\Drawing\Drawing3D\Rectangle3D.cs" />
+    <Compile Include="Graphics\Drawing\Drawing3D\Tile3D.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext2D\ClippingArea.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext2D\DrawingContext2D.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext3D\DrawingContext3D.cs" />
+    <Compile Include="Graphics\DrawingContext\DrawingContext3D\Perspective.cs" />
+    <Compile Include="Graphics\Drawing\EmptyDrawing.cs" />
+    <Compile Include="Graphics\IDrawable.cs" />
+    <Compile Include="Graphics\Texture\Face.cs" />
+    <Compile Include="Graphics\Texture\Texture.cs" />
+    <Compile Include="Graphics\Texture\Texture2D.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\PolygonTextureManager.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\RectangleTextureManager.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\Texture2DManager.cs" />
+    <Compile Include="Graphics\Texture\TextureManagers\TextureManager.cs" />
+    <Compile Include="GUI\Button.cs" />
+    <Compile Include="GUI\GUIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GUIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Menu\MainMenuButtonsFactory.cs" />
+    <Compile Include="GUI\Menu\Menu.cs" />
+    <Compile Include="GUI\Menu\MenuButtonsFactoryBase.cs" />
+    <Compile Include="Images.Designer.cs">
+      <DependentUpon>Images.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Window\MainWindow.cs" />
+    <Compile Include="Window\MainWindowUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,13 +101,20 @@
       <Project>{9203276b-d1e2-4791-b0e8-c1ec496741ce}</Project>
       <Name>Desolation.Basic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Desolation.Graphics\Desolation.Graphics.csproj">
-      <Project>{2842bc63-ce5b-4aa9-af14-9acf42e33cad}</Project>
-      <Name>Desolation.Graphics</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\placeholder_100x40.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Menu\" />
+    <EmbeddedResource Include="GUI\GUIResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GUIResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

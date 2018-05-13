@@ -19,7 +19,7 @@ namespace Desolation.Basic {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,11 +61,47 @@ namespace Desolation.Basic {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Desolation.
+        /// </summary>
+        internal static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to config.xml.
         /// </summary>
         internal static string ConfigFileName {
             get {
                 return ResourceManager.GetString("ConfigFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fullscreen.
+        /// </summary>
+        internal static string FullscreenBorder {
+            get {
+                return ResourceManager.GetString("FullscreenBorder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to borderless.
+        /// </summary>
+        internal static string NoBorder {
+            get {
+                return ResourceManager.GetString("NoBorder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to normal.
+        /// </summary>
+        internal static string NormalBorder {
+            get {
+                return ResourceManager.GetString("NormalBorder", resourceCulture);
             }
         }
     }
